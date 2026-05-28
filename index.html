@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLEVA | ELEVA TU VIDA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>   
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#0a0a0a;
+color:#eaeaea;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02), transparent 40%);
+z-index:-1;
+}
+
+header{
+text-align:center;
+padding:90px 20px;
+border-bottom:1px solid #c9a24a;
+}
+
+h1{
+font-family:'Playfair Display';
+font-size:44px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.sub{
+color:#aaa;
+letter-spacing:2px;
+}
+
+.hero-text{
+max-width:700px;
+margin:20px auto;
+color:#ccc;
+line-height:1.7;
+}
+
+.price{
+font-size:30px;
+color:#d4af37;
+margin-top:20px;
+}
+
+.btn{
+background:#d4af37;
+color:#000;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:25px;
+}
+
+.section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+font-family:'Playfair Display';
+color:#d4af37;
+}
+
+.divider{
+width:80px;
+height:2px;
+background:#d4af37;
+margin:15px 0 30px 0;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:12px;
+border:1px solid rgba(212,175,55,0.2);
+}
+
+.card p{
+line-height:1.8;
+color:#ccc;
+}
+
+.section img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+transition:0.3s;
+}
+
+.section img:hover{
+transform:scale(1.02);
+}
+
+.invest{
+background:#111;
+padding:40px;
+border-radius:12px;
+text-align:center;
+border:1px solid rgba(212,175,55,0.2);
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:40px;
+border-top:1px solid #c9a24a;
+color:#aaa;
+}
+
+/* HERO CON IMAGEN */
+.hero{
+position:relative;
+height:100vh;
+background:url('fondo.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* CAPA OSCURA */
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+top:0;
+left:0;
+}
+
+/* CONTENIDO */
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+padding:20px;
+}
+
+/* LOGO */
+.logo{
+width:220px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 15px rgba(212,175,55,0.4));
+}
+
+/* TEXTO */
+.hero h1{
+font-family:'Playfair Display';
+font-size:48px;
+color:#d4af37;
+}
+
+.sub{
+color:#ccc;
+letter-spacing:2px;
+}
+
+.hero-text{
+color:#ddd;
+line-height:1.7;
+margin:20px 0;
+}
+
+/* BOTÓN */
+.btn{
+background:#d4af37;
+color:#000;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:20px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+.hero h1{
+font-size:32px;
+}
+
+.logo{
+width:160px;
+}
+}
+
+.logo{
+width:220px;
+display:block;
+margin:0 auto 20px auto;
+}
+
+@media (max-width:768px){
+.hero h1{
+font-size:32px;
+}
+
+.logo{
+width:160px;
+}
+}
+
+/* LOGO PRO */
+.logo{
+width:220px;
+display:block;
+margin:0 auto 25px auto;
+filter:drop-shadow(0 0 10px rgba(212,175,55,0.3));
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+}
+
+/* BOTÓN FLOTANTE */
+.info-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#d4af37;
+color:#000;
+padding:16px 24px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 15px rgba(212,175,55,0.4);
+transition:0.3s;
+z-index:9999;
+display:block;
+}
+
+.info-btn:hover{
+transform:scale(1.08);
+}
+
+.music-btn{
+position:absolute;
+top:20px;
+right:20px;
+background:rgba(0,0,0,0.6);
+color:#d4af37;
+border:1px solid #d4af37;
+padding:10px 18px;
+border-radius:25px;
+font-size:13px;
+cursor:pointer;
+z-index:9999;
+transition:0.3s;
+backdrop-filter:blur(5px);
+}
+
+.music-btn:hover{
+background:#d4af37;
+color:#000;
+}
+
+.zone-btn{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#d4af37;
+color:#000;
+padding:14px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 0 20px rgba(212,175,55,0.2);
+transition:0.3s;
+z-index:9999;
+}
+
+.zone-btn:hover{
+transform:scale(1.08);
+background:#d4af37;
+}
+
+.brochure-pro{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+border-radius:30px;
+background:linear-gradient(135deg,#d4af37,#f5d77a);
+color:#000;
+text-decoration:none;
+font-weight:600;
+letter-spacing:1px;
+box-shadow:0 0 20px rgba(212,175,55,0.3);
+transition:0.3s;
+}
+
+.brochure-pro:hover{
+transform:scale(1.07);
+box-shadow:0 0 30px rgba(212,175,55,0.6);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="overlay"></div>
+
+<button class="music-btn" onclick="toggleMusic()">
+🎧 Activar sonido
+</button>
+
+<div class="hero-content">
+    <img src="logo.png" class="logo">
+
+    <h1>SOLEVA</h1>
+    <p class="sub">UNA INVERSION INTELIGENTE</p>
+
+    <p class="hero-text">
+    NO ES SOLO UN DEPARTAMENTO, ES UN ESTILO DE VIDA......
+    </p>
+
+    <div class="price">DESDE $4,722,000 MXN</div>
+
+    <a class="btn" href="https://wa.me/523221077202?text=Hola,%20quiero%20información%20de%20SOLEVA%20en%20MARINA%20VALLARTA" target="_blank">
+    Recibir información
+    </a>
+</div>
+
+</header>
+
+
+<!-- HEADLINE -->
+<div class="section invest">
+<h2>No es solo un departamento… es un patrimonio que puede generar ingresos mientras lo disfrutas.</h2>
+<p></p>
+</div>
+
+
+<!-- UBICACIÓN -->
+<div class="section">
+<h2>📍 Ubicación que genera alegrias y recuerdos con tus seres queridos.</h2>
+<div class="divider"></div>
+
+<img src="ubicacion.jpg">
+
+<div class="card">
+
+Cercana Zona Hotelera Premium, turismo constante y Ideal para Plataformas como Air Bnb.<br><br>
+
+Plusvalía estimada: 15% anual<br><br>
+
+Aquí no compras “ubicación bonita”.<br>
+Compras conectividad + flujo Turistico + Plusvalia.
+<p>
+Invertir en Soleva es elegir un patrimonio que trabaja para ti… mientras tú decides cómo disfrutarlo..<br><br>
+
+UBICADO DENTRO DE PUERTO VALLARTA, EN UNA ZONA DE ALTO NIVEL.<br><br>
+
+Conectividad estratégica:<br>
+Sobre av. de Acceso<br>
+Aeropuerto — 7 min<br>
+Central Camionera — 10 min<br>
+Malecon — 20 min<br>
+Plaza Galerias — 8 min<br>
+Zona Romntica — 15 Minutos<br>
+Cotsco — 10 min<br><br>
+
+</div>
+
+<!-- Marina Vallarta -->
+<div class="section">
+<h2>Restaurantes, Club de Yates, Hoteles, Negocios y Mas!</h2>
+<div class="divider"></div>
+
+<img src="marina-vallarta.jpg">
+
+<div class="card">
+<p>
+A solo MInutos de Soleva encontaras uno de los Primeros Campos de Golf del Puerto, asi como tambien una de las Mejores Playas de la Bahia.<br><br>
+
+🌿 Lo que hace especial a Soleva:<br><br>
+
+✔ Departamentos de Lujo<br>
+✔ Amenidades de Primer Nivel<br>
+✔ Diseño, Confort, Lujo y Ubicacion, Convinados solo para Ti.<br><br>
+
+👉 Este tipo de Propiedades  son para Aquellos que Gustan de un Estilo de Vida Diferente.<br>
+</p>
+</div>
+</div>
+
+
+<!-- Plataformas -->
+<div class="section">
+<h2>Ideal para Plataformas como Airbnb?</h2>
+<div class="divider"></div>
+
+<img src="amenidades.jpg">
+
+<div class="card">
+<p>
+Amenidades:<br>
+Jacuzzi<br>
+Gym<br>
+Pool<br>
+Water beds<br>
+Rooftop<br>
+Chill-out Zone<br>
+Social Hub<br>
+Co-work Hall<br>
+Grill Zone<br>
+Kids Park<br>
+Sunbat Hing<br>
+Bar Zone<br>
+Pet Park<br>
+Green Areas<br>
+Casa Club<br>
+Yoga Zone<br><br>
+
+<div class="card">
+<p>
+Rentalo Mientras no lo Utilizas.<br>
+Genera Ganancias<br>
+Un espacio que puedes disfrutar hoy y que tiene el potencial de generar ingresos mientras no lo usas.<br>
+Por su ubicacion es Ideal para Extranjeros que Escapan del Invierno en sus paises<br><br>
+
+Airbnb, Booking, Vrbo entre otras Plataformas<br><br>
+
+Soleva en Marina Vallarta destaca por ser un desarrollo residencial que combina un estilo de vida relajado y familiar con la exclusividad de una zona privilegiada. Su atractivo radica en la privacidad, la calma y el diseño que integra materiales cálidos, creando un ambiente fresco y confortable ideal para vacacionar o vivir cerca de la Marina.<br><br>
+
+
+Principales Atractivos y Estilo de Soleva:<br><br>
+✔ Ubicación Exclusiva: Situado en Marina Vallarta, lo que brinda cercanía a todos los servicios de primer nivel, atardeceres espectaculares y una zona tranquila.<br>
+✔ Enfoque Familiar: Diseñado como el punto de encuentro perfecto para vacaciones, facilitando la convivencia con áreas comunes pensadas para todas las edades.<br>
+✔ Diseño y Confort: Ofrece espacios diseñados para la comodidad, con materiales cálidos y un ambiente que invita al descanso.<br><br>
+✔ Amenidades Enfocadas en el Estilo de Vida: Cuenta con amenidades como ludoteca para niños y terrazas para la convivencia de adultos.<br>
+✔ Inversión Segura: Se posiciona como una oportunidad de inversión en una zona de alta plusvalía, ideal para quienes buscan su propio lugar de descanso sin depender de hoteles.<br><br>
+
+</p>
+</div>
+</div>
+
+
+<!-- CARACTERÍSTICAS -->
+<div class="section">
+<h2>🌴 Características del Desarrollo :</h2>
+<div class="divider"></div>
+
+<img src="aerea.jpg">
+
+<div class="card">
+<p>
+Soleva - Desarrollo Inmobiliario<br><br>
+
+✔ Concepto: Moderno complejo residencial de cinco fases, enfocado en confort, diseño y conexión con la naturaleza.<br>
+✔ Estructura: Torres ubicadas sobre una plataforma elevada que alberga amenidades principales y plaza comercial.<br>
+✔ SOLEVA – Energía Solar Inteligente : Unidad especializada de OBIKUZ en soluciones fotovoltaicas para viviendas, empresas e industrias.<br><br>
+
+ <br>
+
+</p>
+</div>
+</div>
+
+<!-- PROYECTO -->
+<div class="section">
+<h2>Por que Aqui?</h2>
+<div class="divider"></div>
+
+<img src="proyecto.jpg">
+
+
+</div>
+</div>
+
+
+<!-- INVERSIÓN -->
+<div class="section invest">
+<h2>Oportunidad financiera</h2>
+<p>
+Precios desde $4,722,000 MXN<br>
+<br>
+
+</p>
+</div>
+
+<!-- GALERÍA -->
+<div class="section">
+<h2>📸 Galería del proyecto</h2>
+<div class="divider"></div>
+
+<!-- SOLEVA -->
+<h3 style="color:#d4af37; margin-bottom:15px;">🌴 Terreno</h3>
+<div class="gallery">
+<img src="s1.jpg">
+<img src="s2.jpg">
+<img src="s3.jpg">
+<img src="s4.jpg">
+<img src="s5.jpg">
+<img src="s6.jpg">
+</div>
+
+<br><br>
+
+</div>
+
+<a class="zone-btn" href="https://drive.google.com/file/d/1iCI2FPJS9apWM7xJSVP59uIc3jUr9FY-/view?usp=sharing">
+Ver estudio de zona
+</a>
+
+
+<!-- CTA -->
+<div class="section invest">
+<h2>Ideal para : Inversionistas, Departamento vacacional, Departamento Familiar.</h2>
+<p>
+
+</p>
+
+<a class="btn" href="https://wa.me/523221077202?text=Hola,%20quiero%20información%20del%20desarrollo%20en%20SOLEVA" target="_blank">
+Contactar ahora
+</a>
+</div>
+
+
+<footer>
+Torrez & Maldonado Real Estate<br>
+Lic. Veronica Torrez<br>
+licenciadatorrez08@gmail.com<br>
++52 322 107 7202
+</footer>
+
+
+<a class="info-btn" href="https://forms.gle/W92MVkhbpmREGUeN6" target="_blank">
+Explorar disponibilidad
+</a>
+
+<a class="brochure-pro" href="https://drive.google.com/file/d/1attvoypq0l5pwEfi8wVNCSFC4Cztn7eH/view?usp=sharing" target="_blank">
+brochure completo
+</a>
+
+
+<audio id="bg-music" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let isPlaying = false;
+const audio = document.getElementById("bg-music");
+
+function toggleMusic(){
+if(!isPlaying){
+audio.play();
+isPlaying = true;
+document.querySelector(".music-btn").innerText = "🔊 Sonido activo";
+}else{
+audio.pause();
+isPlaying = false;
+document.querySelector(".music-btn").innerText = "🎧 Activar sonido";
+}
+}
+</script>
+
+</body>
+</html>
